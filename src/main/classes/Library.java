@@ -11,6 +11,14 @@ public class Library {
         students = new ArrayList<>();
     }
 
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
     public void addBook(Book book) {
         books.add(book);
     }
@@ -32,6 +40,11 @@ public class Library {
             System.out.println("!! Book " + book.getTitle() + " not registered.");
             return false;
         }
+        if (!this.students.contains(student)) {
+            System.out.println("!! Student " + student.getName() + " not registered.");
+            return false;
+        }
+
         if (student.hasBook(book)) {
             System.out.println("!! Student already has the book.");
             return false;

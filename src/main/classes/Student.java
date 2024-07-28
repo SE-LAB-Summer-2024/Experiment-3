@@ -13,6 +13,10 @@ public class Student {
         this.books = new ArrayList<>();
     }
 
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
     public String getName() {
         return name;
     }
