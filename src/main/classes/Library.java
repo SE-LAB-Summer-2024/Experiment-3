@@ -71,6 +71,7 @@ public class Library {
         }
         if (student.hasBook(book)) {
             this.books.add(book);
+            student.getBooks().remove(book);
             System.out.println(student.getName() + " returned " + book.getTitle() + ".");
             return true;
         }

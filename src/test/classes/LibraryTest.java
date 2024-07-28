@@ -42,10 +42,13 @@ class LibraryTest {
         //Arrange
         library.addBook(book);
         library.addStudent(student);
+        library.lendBook(book, student);
         //Act
         boolean result = library.returnBook(book, student);
+        boolean returnBookAgain = library.returnBook(book, student);
         //Assert
         Assertions.assertTrue(result);
+        Assertions.assertFalse(returnBookAgain);
         Assertions.assertTrue(library.getBooks().contains(book));
         Assertions.assertFalse(student.getBooks().contains(book));
     }
