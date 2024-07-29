@@ -2,6 +2,7 @@ package test.classes;
 
 import main.classes.Book;
 import main.classes.Library;
+import main.classes.SearchByType;
 import main.classes.Student;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,12 +56,41 @@ class LibraryTest {
 
     @Test
     void searchStudents() {
-        // TODO: Write test cases for searchStudents method
+        //Arrange
+        Student[] students = {
+            new Student("John Doe", 1),
+            new Student("Tom Doe", 2),
+            new Student("Max Doe", 3),
+        };
+        library.addStudent(students[0]);
+        library.addStudent(students[1]);
+        library.addStudent(students[2]);
+        ArrayList<Object> keys = new ArrayList<>();
+        keys.add(1);
+        //Act
+        boolean result = library.searchStudents(SearchByType.ID, keys).contains(students[0]);
+        //Assert
+        Assertions.assertTrue(result);
     }
 
     @Test
     void searchBooks() {
-        // TODO: Write test cases for searchBooks method
+        //Arrange
+        Book[] books = {
+            new Book("Book Title", "Book Author", 1),
+            new Book("Book Title", "Book Author", 2),
+            new Book("Book Title", "Book Author", 3),
+        };
+
+        library.addBook(books[0]);
+        library.addBook(books[1]);
+        library.addBook(books[2]);
+        ArrayList<Object> keys = new ArrayList<>();
+        keys.add(1);
+        //Act
+        boolean result = library.searchBooks(SearchByType.ID, keys).contains(books[0]);
+        //Assert
+        Assertions.assertTrue(result);
     }
 
     @Test
