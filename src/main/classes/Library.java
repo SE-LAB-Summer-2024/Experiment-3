@@ -1,6 +1,7 @@
 package main.classes;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Library {
@@ -15,6 +16,8 @@ public class Library {
     public ArrayList<Book> getBooks() {
         return books;
     }
+
+
 
     public ArrayList<Student> getStudents() {
         return students;
@@ -135,5 +138,13 @@ public class Library {
         for (Student student : students) {
             System.out.println(student);
         }
+    }
+
+    public void setBooks(ArrayList<Book> books) {
+        this.books = books;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
     }
 }

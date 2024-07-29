@@ -63,8 +63,47 @@ TDD
 ۳. روالی ‬‫را که‬ ‫برای‬ ‫پروژه‬ ‫‪json-simle‬‬ ‫ارائه‬ ‫شد‬،‬ ‫برای‬ پروژه ای که بر روی آن مشغول هستید هم‬ ‫انجام‬ ‫دهید.
 برای ‫به‬ ‫دست‬‫‌آوردن‬ ‫اعداد‬ ‫پوشش‬ ‫آزمون‬ ‫کافی‬ ‫است‬ ‫بر‬ ‫روی‬ ‫پکیج‬ ‫‪java‬‬ ‫در‬ ‫مسیر‬ ‫‪test‬‬ ‫کلیک‬ ‫راست‬ ‫کرده‬ ‫و‬ ‫گزینه ‬‫‪coverage‬‬ ‫‪with‬‬ ‫‪Tests‬‬ ‫‪All‬‬ ‫‪Run‬‬ ‫را‬ ‫انتخاب‬ ‫کنید‬ ‫(نیازی‬ ‫به‬ ‫اجرای‬ ‫عادی‬ ‫پروژه‬ ‫نیست)‪.‬‬‫
 
+این کار را انجام دادیم و نتیجه اولیه به این صورت بود :
+
+![](images/FirstCoverage.png)
 
 ۴. با افزودن بخش‌هایی به کد تست، اعداد پوشش آزمون را در مورد تمامی کلاس‌های موجود در برنامه بهبود دهید. درصد افزایش اعداد پوشش آزمون مهم نیست ولی بخش‌هایی که به کد تست اضافه می‌شوند باید معنادار باشند و صرفاً یک فراخوانی ساده کلاس یا متد، بدون استفاده در بخش‌های دیگر کد کافی نیست. 
 
+تکه کد زیر را اضافه کردیم :‌
+```
+@Test
+    void displayBooks() {
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Book 1", "Author 1", 1));
+        books.add(new Book("Book 2", "Author 2", 2));
+        library.setBooks(books);
 
+        library.displayBooks();
+
+        String expectedOutput = "Available books in library:\n"
+                + "Book 1 by Author 1\n"
+                + "Book 2 by Author 2";
+        Assertions.assertEquals(expectedOutput, outContent.toString().trim());
+    }
+
+    @Test
+    void displayStudents() {
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(new Student("Student 1", 1));
+        students.add(new Student("Student 2", 2));
+        library.setStudents(students);
+
+        library.displayStudents();
+
+        String expectedOutput = "Registered students:\n"
+                + "Student 1|1\n"
+                + "Student 2|2";
+
+        Assertions.assertEquals(expectedOutput, outContent.toString().trim());
+    }
+```
+
+و در نهایت همانطور که مشاهده می کنید درصد های method coverage افزایش یافت.
+
+![](images/LastCoverage.png)
 
