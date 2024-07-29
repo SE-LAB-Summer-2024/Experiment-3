@@ -93,13 +93,13 @@ class LibraryTest {
         Assertions.assertTrue(result);
     }
 
-    @Test
-    void displayBooks() {
-        // TODO: Write test case for displayBooks method
-    }
+        @Test
+        void displayBooks() {
+            // TODO: Write test case for displayBooks method
+        }
 
-    @Test
-    void displayStudents() {
-        // TODO: Write test case for displayStudents method
-    }
+        @Test
+        void displayStudents() {
+            // TODO: Write test case for displayStudents method
+        }
 }
