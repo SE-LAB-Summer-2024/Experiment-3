@@ -101,6 +101,7 @@ class LibraryTest {
         Assertions.assertTrue(result);
     }
 
+
     @Test
     void displayBooks() {
         ArrayList<Book> books = new ArrayList<>();
@@ -131,4 +132,6 @@ class LibraryTest {
 
         Assertions.assertEquals(expectedOutput, outContent.toString().trim());
     }
+
+       
 }
