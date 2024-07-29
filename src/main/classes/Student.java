@@ -21,6 +21,8 @@ public class Student {
         return name;
     }
 
+    public int getId() { return id; }
+
     public boolean hasBook(Book book) {
         return this.books.contains(book);
     }
