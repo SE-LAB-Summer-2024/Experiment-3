@@ -1,13 +1,12 @@
-package test.classes;
+package classes;
 
-import main.classes.Book;
-import main.classes.Library;
-import main.classes.SearchByType;
-import main.classes.Student;
+import classes.Book;
+import classes.Library;
+import classes.SearchByType;
+import classes.Student;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 
 class LibraryTest {
